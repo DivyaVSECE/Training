@@ -1,0 +1,15 @@
+class Solution {
+    public int sumOfLeftLeaves(TreeNode root) {
+        if(root == null)
+            return 0;
+        return func(root.left, true) + func(root.right, false);
+        
+    }
+    public int func(TreeNode node, boolean isLeft) {
+        if(node == null)
+            return 0;
+        if(isLeft && node.left == null && node.right == null)
+            return node.val;
+        return func(node.left, true) + func(node.right, false);
+    }
+}
