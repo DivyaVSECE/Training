@@ -1,0 +1,10 @@
+class Solution {
+public:
+    int countNodes(TreeNode* root) {
+        if(root==NULL)
+            return 0;
+        int lst=countNodes(root->left);
+        int rst=countNodes(root->right);
+        return 1+lst+rst;
+    }
+};
